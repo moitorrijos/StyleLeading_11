@@ -1,0 +1,50 @@
+:root{
+    --main-bg-color:#1A4341;
+    --main-line-color:#F3AC3C;
+    --secondary-line-color:#998235;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.sol-atras {
+    border-radius: 50%;
+    width: 600px;
+    height: 600px;
+    background-color: var(--secondary-line-color);
+    position: relative;
+}
+
+.sol-lineas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 750px;
+    height: 750px;
+    display: grid;
+    grid-template-rows: repeat(13, 1fr);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.linea:nth-child(odd) {
+    background-color: var(--main-line-color);
+}
+
+.linea:nth-child(even) {
+    background-color: var(--main-bg-color);
+}
+
+.linea:first-child,
+.linea:last-child,
+.linea:nth-child(2),
+.linea:nth-child(3),
+.linea:nth-child(11),
+.linea:nth-child(12) {
+    background-color: transparent;
+}
